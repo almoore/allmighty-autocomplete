@@ -132,9 +132,9 @@ app.directive('autocomplete', function() {
               scope.completing = true;
               scope.$apply();
             }, 200);
-            if(scope.selectedIndex !== -1) {
-                scope.select(angular.element(angular.element(this).find('li')[scope.selectedIndex]).text())
-            }
+          }
+          if(scope.selectedIndex !== -1) {
+            scope.select(angular.element(angular.element(this).find('li')[scope.selectedIndex]).text())
           }
         };
       }
