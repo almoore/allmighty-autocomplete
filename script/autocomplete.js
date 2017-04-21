@@ -134,7 +134,11 @@ app.directive('autocomplete', function() {
             }, 200);
           }
           if(scope.selectedIndex !== -1) {
-            scope.select(angular.element(angular.element(this).find('li')[scope.selectedIndex]).text())
+            scope.select(angular.element(angular.element(this).find('li')[scope.selectedIndex]).text());
+            setTimeout(function () {
+              scope.completing = false;
+              scope.$apply();
+            }, 200);
           }
         };
       }
